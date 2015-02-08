@@ -1,6 +1,6 @@
 # Oneday
 
-TODO: Write a gem description
+Oneday is a parser library for working with Day One journal files.
 
 ## Installation
 
@@ -20,11 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+TBD.
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/oneday/fork )
+1. Fork it ( https://github.com/janlindblom/oneday/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

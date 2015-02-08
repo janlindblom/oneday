@@ -1,5 +1,8 @@
 require "oneday/version"
+require "oneday/reader/configuration"
+require "oneday/reader/entry"
+require "oneday/reader"
 
 module Oneday
-  # Your code goes here...
+  
 end

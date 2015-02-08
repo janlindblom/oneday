@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Oneday::VERSION
   spec.authors       = ["Jan Lindblom"]
   spec.email         = ["janlindblom@fastmail.fm"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Journaling on the command line.}
+  spec.description   = %q{Journaling on the command line, inspired by jrnl.}
+  spec.homepage      = "https://github.com/janlindblom/oneday"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -20,4 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency 'rspec', '~> 3.2.0'
+  spec.add_dependency 'nokogiri', '~> 1.6'
+  spec.add_dependency 'parseconfig', '~> 1.0.6'
 end
