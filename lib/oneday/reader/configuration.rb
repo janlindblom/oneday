@@ -13,6 +13,8 @@ module Oneday
           end
         end
 
+        initialize_configuration
+
         unless File.exist? self.file
           initialize_configuration_file
         end
@@ -23,18 +25,26 @@ module Oneday
         self.config
       end
 
-      def store
+      def flush
         f = File.open(self.file, 'w')
         status = self.config.write(f)
         f.close
         status
       end
 
+      def default
+        initialize_configuration
+        self.config
+      end
+
       private
 
-      def initialize_configuration_file
+      def initialize_configuration
         self.config = ParseConfig.new
         self.config.add("default_storage_path", "~/Dropbox/Apps/Day One/Journal.dayone")
+      end
+
+      def initialize_configuration_file
         f = File.new(self.file, 'w')
         status = self.config.write(f)
         f.close
