@@ -1,5 +1,7 @@
 # Oneday
 
+[![Build Status](https://travis-ci.org/janlindblom/oneday.svg)](https://travis-ci.org/janlindblom/oneday)
+
 Oneday is a parser library for working with Day One journal files.
 
 ## Installation
