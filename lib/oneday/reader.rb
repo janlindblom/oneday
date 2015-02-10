@@ -19,14 +19,15 @@ module Oneday
       path = File.expand_path("#{self.configuration.storage_path}/entries")
       files = Dir.glob(File.join(path, "*.doentry")).map { |filename|
         Oneday::Reader::Entry.build({id: filename.match(/\/.*\/(.*)\.doentry$/)[1], file: filename}) }.to_a
-      raise files.inspect
+      files
     end
 
     # Will list pictures based on the configured storage path.
     def pictures
       path = File.expand_path("#{self.configuration.storage_path}/photos")
-      
-      raise path.inspect
+      files = Dir.glob(File.join(path, "*.*")).map { |filename|
+        Oneday::Reader::Entry.build({id: filename.match(/\/.*\/(.*)\..*$/)[1], file: filename}) }.to_a
+      files
     end
 
     # Will open a given entry.

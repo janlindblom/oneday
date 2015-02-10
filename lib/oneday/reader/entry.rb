@@ -10,7 +10,7 @@ module Oneday
         entry = Oneday::Reader::Entry.new
         entry.id = args[:id]
         entry.file = args[:file]
-        entry.populate_from_file
+        #entry.populate_from_file
         return entry
       end
 
