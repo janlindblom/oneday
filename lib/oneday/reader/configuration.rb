@@ -6,7 +6,7 @@ module Oneday
       attr_accessor :config, :file
 
       def initialize(args=nil)
-        self.file = File.expand_path("#{ENV['HOME']}/.config/oneday.conf")
+        self.file = File.expand_path("~/.config/oneday.conf")
         unless args.nil?
           if args[:file]
             self.file = args[:file]
@@ -18,6 +18,10 @@ module Oneday
         unless File.exist? self.file
           initialize_configuration_file
         end
+      end
+
+      def storage_path
+        self.config['default_storage_path']
       end
 
       def parse
@@ -41,7 +45,7 @@ module Oneday
 
       def initialize_configuration
         self.config = ParseConfig.new
-        self.config.add("default_storage_path", "~/Dropbox/Apps/Day One/Journal.dayone")
+        self.config.add("default_storage_path", File.expand_path("~/Dropbox/Apps/Day One/Journal.dayone"))
       end
 
       def initialize_configuration_file

@@ -1,3 +1,5 @@
 --color
 -f d
+-f h
+-o reports/rspec.html
 --require spec_helper
