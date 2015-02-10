@@ -1,6 +1,10 @@
 require "oneday"
 
 describe "Oneday::Reader" do
+  before :all do
+    File.unlink "/tmp/oneday_test.conf" if File.exist? "/tmp/oneday_test.conf"
+  end
+  
   before :each do
     @reader = Oneday::Reader.new(config_file: "/tmp/oneday_test.conf")
   end

@@ -18,7 +18,9 @@ module Oneday
     def entries
       path = File.expand_path("#{self.configuration.storage_path}/entries")
       files = Dir.glob(File.join(path, "*.doentry")).map { |filename|
-        Oneday::Reader::Entry.build({id: filename.match(/\/.*\/(.*)\.doentry$/)[1], file: filename}) }.to_a
+        Oneday::Reader::Entry.build({
+          id: filename.match(/\/.*\/(.*)\.doentry$/)[1],
+          file: filename}) }.to_a
       files
     end
 
@@ -26,7 +28,10 @@ module Oneday
     def pictures
       path = File.expand_path("#{self.configuration.storage_path}/photos")
       files = Dir.glob(File.join(path, "*.*")).map { |filename|
-        Oneday::Reader::Entry.build({id: filename.match(/\/.*\/(.*)\..*$/)[1], file: filename}) }.to_a
+        Oneday::Reader::Entry.build({
+          id: filename.match(/\/.*\/(.*)\..*$/)[1],
+          file: filename,
+          entry: filename.match(/\/.*\/(.*)\..*$/)[1]}) }.to_a
       files
     end
 

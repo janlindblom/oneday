@@ -2,12 +2,17 @@ require "oneday"
 
 describe "Oneday::Reader::Configuration" do
   
+  before :all do
+    File.unlink "/tmp/oneday_nonexistant.conf" if File.exist? "/tmp/oneday_nonexistant.conf"
+    File.unlink "/tmp/oneday_test.conf" if File.exist? "/tmp/oneday_test.conf"
+  end
+  
   before :each do
     @orc = Oneday::Reader::Configuration.new(file: "/tmp/oneday_test.conf")
   end
   
   it "throws Errno::EACCES if the configuration cannot be read from file" do
-    @orc.file = "/tmp/nonexistant"
+    @orc.file = "/tmp/oneday_nonexistant.conf"
     expect {
       @orc.parse
     }.to raise_error(Errno::EACCES)

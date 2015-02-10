@@ -10,6 +10,7 @@ module Oneday
         entry = Oneday::Reader::Picture.new
         entry.id = args[:id]
         entry.file = args[:file]
+        entry.entry = args[:entry]
         return entry
       end
     end
