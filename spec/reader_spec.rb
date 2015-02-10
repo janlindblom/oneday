@@ -10,10 +10,10 @@ describe "Oneday::Reader" do
   end
   
   it "knows where to find entries" do
-    expect(@reader.entries).not_to be_empty
+    expect(@reader.entries).to be_instance_of(Array)
   end
   
   it "knows where to find pictures in entries" do
-    expect(@reader.pictures).not_to be_empty
+    expect(@reader.pictures).to be_instance_of(Array)
   end
 end
